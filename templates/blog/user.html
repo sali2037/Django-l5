@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href={% static "blog/css/bootstrap.min.css"  %}>
+  </head>
+  <body>
+<div class="container">
+  <form class="form-group" action="" method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" name="" value="Rgister!" class="btn btn-primary">
+  </form>
+
+</div>
+  </body>
+</html>

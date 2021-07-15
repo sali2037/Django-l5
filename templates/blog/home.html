@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block body_block %}
+    <a href="{% url 'blog:Home' %}">Register</a>
+    {% if content %}
+      {% for cont in content %}
+        <h3><a href={% url 'blog:Home' %}>{{cont.title| upper}}</a></h3>
+          <p>{{cont.modified_date}}</p>
+        <p>{{cont.content}}</p>
+      {% endfor %}
+    {% endif %}
+{% endblock %}
+{% block side_bar %}
+<h3>
+  {% if side_bar %}
+    {% for title in side_bar %}
+      <p> {{title.top_name|upper}} </p>
+    {% endfor %}
+  {% endif %}
+</h3>
+{% endblock %}
